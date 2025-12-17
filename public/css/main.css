@@ -1,0 +1,239 @@
+/**
+ * SIP Reviews Shortcode for WooCommerce
+ * Clean, modern, and fully namespaced CSS
+ *
+ * @since 1.3.0
+ */
+@font-face {
+	font-family: 'Font Awesome 5 Free';
+	font-style: normal;
+	font-weight: 900;
+	src: url('../webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+.sip-rswc-wrap {
+	width: 100%;
+	font-family: inherit;
+	color: inherit;
+	box-sizing: border-box;
+}
+
+.sip-rswc-container {
+	/*max-width: 980px;*/
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Summary */
+.sip-rswc-summary {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 30px;
+	min-height: 150px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 20px;
+}
+
+.sip-rswc-summary-left {
+	flex: 1;
+	text-align: center;
+	max-width: 350px;
+}
+
+.sip-rswc-summary-rating {
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.sip-rswc-summary-count {
+	font-size: 18px;
+	margin-top: 6px;
+}
+
+.sip-rswc-summary-label {
+	font-weight: 500;
+}
+
+/* Rating Details Table */
+.sip-rswc-rating-details {
+	flex: 1;
+	max-width: 360px;
+}
+
+table.sip-rswc-rating-table {
+	width: 100%;
+	border-collapse: collapse;
+	border: none !important;
+	table-layout: initial !important;
+}
+
+.sip-rswc-rating-row {
+	background: none !important;
+}
+
+.sip-rswc-rating-row td {
+	padding: 5px 6px;
+	border: none !important;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.sip-rswc-star-label a {
+	/*color: #777;*/
+	text-decoration: none !important;
+	transition: color 0.3s ease;
+}
+
+.sip-rswc-star-label a:hover {
+	color: #000;
+}
+
+/* Rating bar cell and wrapper fix */
+.sip-rswc-bar-cell {
+	width: 100%;
+	min-width: 140px;
+}
+
+.sip-rswc-bar-wrapper {
+	display: block;
+	background-color: #eee;
+	border-radius: 3px;
+	height: 12px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.sip-rswc-bar {
+	display: block;
+	background-color: #ad74a2;
+	height: 100%;
+	width: 0;
+	transition: width 0.4s ease;
+}
+
+.sip-rswc-bar {
+	animation: sipRswcBarGrow 0.8s ease forwards;
+}
+
+@keyframes sipRswcBarGrow {
+	from { 
+		width: 0; 
+	}
+	to { 
+		width: var(--target-width, 100%); 
+	}
+}
+
+.sip-rswc-rating-count a {
+	text-decoration: none !important;
+}
+
+/* Tabs */
+.sip-rswc-tabs-wrap {
+	margin-top: 35px;
+}
+
+.sip-rswc-tabs-content {
+	min-height: 160px;
+}
+
+.sip-rswc-tabs-content ul {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.sip-rswc-tabs-content .title {
+	font-size: 22px;
+	font-weight: 600;
+	color: #222;
+	margin-bottom: 10px;
+}
+
+.sip-rswc-review-item {
+	display: block;
+	padding-bottom: 25px;
+	overflow: hidden;
+}
+
+.comment-borderbox{
+	border:1px solid #e4e1e3;
+	border-radius:4px;
+	padding:30px 30px 0;
+	position:relative
+}
+
+/* === SIP RSWC Rating Stars === */
+
+.sip-rswc-rating-wrapper {
+	display: inline-block;
+	position: relative;
+}
+
+.sip-rswc-rating-widget {
+	height: 28px;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+}
+
+.sip-rswc-star {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 18px;
+	color: #ddd;
+	text-decoration: none !important;
+	margin-right: 2px;
+	position: relative;
+}
+
+.sip-rswc-star:after {
+	content: "\f005"; /* FontAwesome star icon */
+}
+
+/* Optional hover effect for admin previews or interactivity */
+button.sip-rswc-load-more-btn:hover,
+.sip-rswc-star-label a:hover,
+.sip-rswc-rating-count a:hover,
+.sip-rswc-star:hover:after {
+	opacity: 0.8;
+}
+
+/* Buttons */
+button.sip-rswc-load-more-btn {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	font-weight: 600;
+	font-size: 1.2em;
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+	.sip-rswc-summary {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.sip-rswc-rating-details {
+		width: 100%;
+		max-width: none;
+		margin-top: 20px;
+	}
+
+	.sip-rswc-summary-rating {
+		font-size: 22px;
+	}
+
+	.sip-rswc-summary-count {
+		font-size: 16px;
+	}
+}
